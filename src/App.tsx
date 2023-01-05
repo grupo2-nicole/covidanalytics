@@ -3,7 +3,7 @@ import { RoutesMain } from "./routes";
 import { UserContextProvider } from "./contexts/UserContext";
 import { ToastContainer } from "react-toastify";
 
-function App() {
+export function App() {
   return (
     <>
       <GlobalStyle/>
@@ -16,5 +16,3 @@ function App() {
     </>
   );
 }
-
-export default App;
