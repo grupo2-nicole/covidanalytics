@@ -17,9 +17,4 @@ export const FavoriteCardStyle = styled.li`
     line-height: 18px;
   }
 
-  button {
-    all: unset;
-    display: inline-block;
-    cursor: pointer;
-  }
 `;
