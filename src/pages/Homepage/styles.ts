@@ -18,18 +18,18 @@ export const HomepageStyled = styled.main`
   left: 0;
 
   > div {
-    height: 55vh;
+    height: 292px;
     padding: 1.5rem 1rem;
     margin: 0 1rem;
     max-width: 600px;
     margin-top: 1.5rem;
-    background-color: rgba(0, 0, 255, 0.2);
+    background-color: var(--gray-trans);
     border-radius: var(--radius-2);
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 45px;
 
     p {
       text-align: center;
@@ -68,6 +68,11 @@ export const HomepageStyled = styled.main`
       background-color: transparent;
     }
   } */
+
+  button {
+    min-width: 110px;
+    height: 52px;
+  }
 
   a {
     text-decoration: none;
