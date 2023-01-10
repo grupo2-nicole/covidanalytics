@@ -31,12 +31,12 @@ export function ChartProvider({ children }: iChartProvider) {
         data.forEach((el) => {
           let day = el.lastUpdatedAtSource.substring(0,10);
           counter++;
-          if (currDay !== day && counter === 30) {
+          if (currDay !== day && counter === 70) {
             currDay = day;
             let obj = { day: day, total: el.infected };
             historyCases.push(obj);
           }
-          if (counter === 30) {
+          if (counter === 70) {
             counter = 0;
           }
         });
@@ -54,7 +54,7 @@ export function ChartProvider({ children }: iChartProvider) {
         dataBrazil.forEach((el) => {
           let day = el.lastUpdatedAtSource.substring(0,10);
           counter++;
-          if (currDay !== day && counter === 30) {
+          if (currDay !== day && counter === 60) {
             currDay = day;
             const currState = el.infectedByRegion.find(({state}) => uf === state);
             if (currState) {
@@ -62,7 +62,7 @@ export function ChartProvider({ children }: iChartProvider) {
               historyCases.push(obj);
             }
           }
-          if (counter === 30) {
+          if (counter === 60) {
             counter = 0;
           }
         });
@@ -240,8 +240,8 @@ export function ChartProvider({ children }: iChartProvider) {
         <ChartContext.Provider 
             value={{
               brazilCases,
-              findHistoryCasesState,
               showPopulationState,
+              findHistoryCasesState,
               showPercentagePopulationState, 
               showPercentageProportionalDeathsState,
               showPercentageProportionalCasesState

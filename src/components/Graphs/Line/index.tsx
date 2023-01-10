@@ -25,11 +25,12 @@ ChartJS.register(
 );
 
 export function LineChart({ info, labels, title }: iLine) {
+  const colors = generateColors();
   const data = {
     labels: labels,
     datasets: info.map((el) => {
-      el.backgroundColor = generateColors().colorA;
-      el.borderColor = generateColors().color;
+      el.backgroundColor = colors.colorA;
+      el.borderColor = colors.color;
       el.tension = 0.3;
       el.fill = true;
       el.showLine = true;
