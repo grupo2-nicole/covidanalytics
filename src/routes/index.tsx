@@ -5,7 +5,7 @@ import { Dashboard } from "../pages/Dashboard";
 import { Homepage } from "../pages/Homepage";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
-import { ProtectedRoutes } from "./protectedRoutes"
+import { ProtectedRoutes } from "./protectedRoutes";
 
 export function RoutesMain() {
   return (
