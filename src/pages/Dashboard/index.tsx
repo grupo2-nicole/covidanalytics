@@ -6,6 +6,7 @@ import { SearchEngine } from "../../components/SearchEngine";
 import { UserProfile } from "../../components/UserProfile";
 import { DashboardStyles } from "./styles";
 import { UserContext } from "../../contexts/UserContext";
+import { ChartProvider } from "../../contexts/ChartContext";
 
 export function Dashboard() {
   const navigate = useNavigate();
@@ -27,7 +28,9 @@ export function Dashboard() {
       <main>
         <UserProfile />
         <SearchEngine />
-        <Brazil />
+        <ChartProvider>
+          <Brazil />
+        </ChartProvider>
       </main>
     </DashboardStyles>
   );

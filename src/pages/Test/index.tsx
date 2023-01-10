@@ -1,5 +1,5 @@
-import Linha from "./graphs/Line";
-import { Pizza } from "./graphs/Pie";
+// import Linha from "./graphs/Line";
+// import { Pizza } from "./graphs/Pie";
 
 export function Test() {
   const arr = [
@@ -15,12 +15,12 @@ export function Test() {
 
   return (
     <div className="App" style={{ width: "25%", height: "25%" }}>
-      <Pizza
+      {/* <Pizza
         values={[15, 25, 15]}
         labels={["Red", "Yellow", "Blue"]}
         title="Casos"
       />
-      <Linha info={arr} labels={["Red", "Yellow", "Blue"]} title="Mortes" />
+      <Line info={arr} labels={["Red", "Yellow", "Blue"]} title="Mortes" /> */}
     </div>
   );
 }

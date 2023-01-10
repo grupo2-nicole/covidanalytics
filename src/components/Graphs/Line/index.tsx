@@ -11,7 +11,7 @@ import {
   Filler,
 } from "chart.js";
 import { iLine } from "../types";
-import { generateColors } from "../../../../functions/reusable";
+import { generateColors } from "../../../functions/reusable";
 import { TitleChartStyle } from "../styles";
 ChartJS.register(
   Title,
@@ -24,7 +24,7 @@ ChartJS.register(
   Filler
 );
 
-function Linha({ info, labels, title }: iLine) {
+export function LineChart({ info, labels, title }: iLine) {
   const data = {
     labels: labels,
     datasets: info.map((el) => {
@@ -44,5 +44,3 @@ function Linha({ info, labels, title }: iLine) {
     </div>
   );
 }
-
-export default Linha;
