@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import background from "../../assets/background.jpg";
 
-export const HomepageStyled = styled.main`
+export const HomePageStyled = styled.main`
   width: 100%;
   height: 100vh;
   background-image: url(${background});
@@ -13,39 +13,36 @@ export const HomepageStyled = styled.main`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
-  top: 0;
-  left: 0;
 
   > div {
-    height: 292px;
-    padding: 1.5rem 1rem;
-    margin: 0 1rem;
-    max-width: 600px;
-    margin-top: 1.5rem;
-    background-color: var(--gray-trans);
-    border-radius: var(--radius-2);
-    backdrop-filter: blur(5px);
+    background: rgba(330, 330, 330, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-3);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 45px;
+    gap: 20px;
+    text-align: center;
+    max-width: 580px;
+    width: 90%;
 
     p {
       text-align: center;
-      font-size: 25px;
+      font-size: 15px;
       color: var(--white);
       font-family: var(--font-family-1);
       text-shadow: 1px 1px 2px var(--gray-5);
       line-height: 125%;
-      padding: 30px;
+      padding: 20px;
     }
+
     > div {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
       padding-bottom: 5%;
+
       > div {
         display: flex;
         gap: 15px;
@@ -69,13 +66,28 @@ export const HomepageStyled = styled.main`
     }
   } */
 
-  button {
-    min-width: 110px;
-    height: 52px;
-  }
-
   a {
     text-decoration: none;
     color: unset;
+  }
+
+  button {
+    width: 110px;
+    height: 52px;
+  }
+
+  @media (min-width: 650px) {
+    > div {
+      gap: 20px;
+      text-align: center;
+      max-width: 580px;
+      width: 60%;
+      padding: 30px 20px;
+
+      p {
+        font-size: 25px;
+        padding: 30px;
+      }
+    }
   }
 `;

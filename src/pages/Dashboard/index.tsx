@@ -6,6 +6,7 @@ import { SearchEngine } from "../../components/SearchEngine";
 import { UserProfile } from "../../components/UserProfile";
 import { DashboardStyles } from "./styles";
 import { UserContext } from "../../contexts/UserContext";
+import { ChartProvider } from "../../contexts/ChartContext";
 import { FavoriteContext } from "../../contexts/FavoriteContext";
 import { ModalFavorite } from "../../components/FavoriteModal";
 
@@ -28,7 +29,9 @@ export function Dashboard() {
       <main>
         <UserProfile />
         <SearchEngine />
-        <Brazil />
+        <ChartProvider>
+          <Brazil />
+        </ChartProvider>
       </main>
     </DashboardStyles>
   );
