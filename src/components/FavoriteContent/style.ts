@@ -43,6 +43,9 @@ export const FavoriteStyled = styled.section`
     position: relative;
     top: 22px;
     left: 90%;
+    :hover {
+      color: red;
+    }
   }
   
   button:nth-child(2), .iconContainer{

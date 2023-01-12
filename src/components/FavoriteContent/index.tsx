@@ -6,10 +6,10 @@ import TableRow from "@mui/material/TableRow";
 import { useContext } from "react";
 import { FavoriteContext } from "../../contexts/FavoriteContext";
 import { FavoriteStyled } from "./style";
-import x from "../../assets/x.png";
 import { SearchContext } from "../../contexts/SearchContext";
 import Button from "@mui/material/Button";
 import { WhatsappShareButton, WhatsappIcon } from "react-share"
+import { AiOutlineClose } from "react-icons/ai";
 
 
 export function FavoriteContent(){
@@ -18,7 +18,7 @@ export function FavoriteContent(){
     console.log(filterMap)
     return(
         <FavoriteStyled>
-           <button onClick={()=>setOpenModal(false)}><img src={x} alt="close button" /></button>
+           <button onClick={()=>setOpenModal(false)}><AiOutlineClose /></button>
            <h2>{dataModal[0].data.state}</h2>
            <section>
             <div className="div_text">
