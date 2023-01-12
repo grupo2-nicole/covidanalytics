@@ -20,8 +20,8 @@ export function SearchProvider({ children }: iSearchProviderProps) {
       setfilterMap(currState);
     } catch (error) {
       console.error(error);
-    }
-  }
+    };
+  };
   
   async function getApi() {
     try {
@@ -29,8 +29,8 @@ export function SearchProvider({ children }: iSearchProviderProps) {
       setStates(resp.data.data);
     } catch (error) {
       console.error(error);
-    }
-  }
+    };
+  };
 
   useEffect(() => {
     getApi();
@@ -43,7 +43,7 @@ export function SearchProvider({ children }: iSearchProviderProps) {
         el.uf.toLowerCase().includes(search)
     );
     setFilterList(filter);
-  }
+  };
 
   return (
     <SearchContext.Provider

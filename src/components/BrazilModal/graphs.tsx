@@ -11,7 +11,7 @@ import { ChartContext } from "../../contexts/ChartContext";
 import { GraphListStyled } from "./styles";
 import { TitleChartStyled } from "../Graphs/styles";
 import { FormControl, InputLabel, NativeSelect } from "@mui/material";
-import { iStates } from "../../contexts/SearchContext/types";
+
 
 export function RenderGraphs() {
   const {
@@ -22,7 +22,8 @@ export function RenderGraphs() {
   } = useContext(ChartContext);
   const [show, setShow] = useState(false);
   const { states } = useContext(SearchContext);
-  const [render, setRender] = useState(states)
+  const [render, setRender] = useState(states);
+  
   useEffect(() => {
     if (brazilCases) {
       setShow(true);
@@ -64,10 +65,10 @@ export function RenderGraphs() {
               }}
               onChange={(e) => filterState(e.target.value)}
             >
-              <option key="none">Todos</option>
-              {states.map((el, index) => (
-                <option key={index} value={el.uf}>
-                  {el.state}
+              <option key={"none"}>Todos</option>
+              {states.map((ele, index) => (
+                <option key={index} value={ele.uf}>
+                  {ele.state}
                 </option>
               ))}
             </NativeSelect>
@@ -93,18 +94,12 @@ export function RenderGraphs() {
       <TableContainer>
         <Table>
           <TableBody>
-            {render
-            .map((info) => {
-              info.percentageCases = showPercentageProportionalCasesState(info);
-              return info
-            })
-            .sort((b: iStates, a: iStates) => a.percentageCases! - b.percentageCases!)
-            .map((info, index) => (
+            {render.map((info, index) => (
               <TableRow key={index}>
                 <TableCell>{info.state}</TableCell>
                 <TableCell align="right">
                   {(
-                    info.percentageCases?.toFixed(2) + ""
+                    showPercentageProportionalCasesState(info)?.toFixed(2) + ""
                   ).replace(".", ",")}
                   %
                 </TableCell>
@@ -119,18 +114,12 @@ export function RenderGraphs() {
       <TableContainer>
         <Table>
           <TableBody>
-            {render
-            .map((info) => {
-              info.percentageDeaths = showPercentageProportionalDeathsState(info);
-              return info
-            })
-            .sort((b: iStates, a: iStates) => a.percentageDeaths! - b.percentageDeaths!)
-            .map((info, index) => (
+            {render.map((info, index) => (
               <TableRow key={index}>
                 <TableCell>{info.state}</TableCell>
                 <TableCell align="right">
                   {(
-                    info.percentageDeaths?.toFixed(2) + ""
+                    showPercentageProportionalDeathsState(info)?.toFixed(2) + ""
                   ).replace(".", ",")}
                   %
                 </TableCell>
