@@ -15,7 +15,7 @@ import { AiOutlineClose } from "react-icons/ai";
 export function FavoriteContent(){
     const { dataModal,setOpenModal,deleteFavoriteId } = useContext(FavoriteContext);
     const { filterMap } = useContext(SearchContext);
-    console.log(filterMap)
+    
     return(
         <FavoriteStyled>
            <button onClick={()=>setOpenModal(false)}><AiOutlineClose /></button>
