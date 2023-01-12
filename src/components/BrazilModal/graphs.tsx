@@ -30,12 +30,12 @@ export function RenderGraphs() {
     }
   }, [brazilCases]);
 
-  function filterState(state: string){
-    if(state === "Todos"){
-      setRender(states)
+  function filterState(state: string) {
+    if (state === "Todos") {
+      setRender(states);
     } else {
-      const filteredStatesList = states.filter(uf => state === uf.uf)
-      setRender(filteredStatesList)
+      const filteredStatesList = states.filter((uf) => state === uf.uf);
+      setRender(filteredStatesList);
     }
   }
 
